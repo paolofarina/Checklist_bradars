@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8fafc"><title>Checklist Famiglia</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="shell"><header><div><div class="eyebrow">ORGANIZZAZIONE CONDIVISA</div><h1>Checklist Famiglia</h1><p class="subtitle">Tutto quello che serve, senza complicazioni.</p></div><div class="profile"><span id="who"></span><button id="logout" class="text-button" hidden>Esci</button></div></header>
+<div id="notice" role="status" aria-live="polite"></div>
+<section id="setup" class="panel" hidden><h2>Configurazione necessaria</h2><p>Inserisci le credenziali pubbliche del progetto Firebase nel file <code>firebase-config.js</code> e pubblica il sito.</p></section>
+<section id="login" class="login panel" hidden><div class="lock">✦</div><h2>Le liste della famiglia, tutte qui.</h2><p>Accedi con l'account Google autorizzato per leggere e aggiornare le checklist.</p><button id="loginBtn" class="primary">Accedi con Google</button></section>
+<main id="app" hidden><div class="toolbar"><span id="summary">Le tue liste</span><button id="newList" class="primary">＋ Nuova lista</button></div><div id="lists" class="lists"></div><div id="empty" class="panel empty" hidden><h2>Nessuna lista</h2><p>Crea la prima lista per cominciare.</p></div></main>
+<footer>Le modifiche vengono sincronizzate tra i dispositivi autorizzati.</footer></div><script type="module" src="app.js"></script></body></html>
