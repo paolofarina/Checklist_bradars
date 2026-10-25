@@ -1,17 +1,23 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // UID Firebase autorizzati. Mai usare password/token nel repository.
-    function member() {
-      return request.auth != null && request.auth.uid in [
-        '1p3BERkocYa6oWHtxhSkPOBWk8e2'
-      ];
+    function autorizzato() {
+      return request.auth != null && (
+        request.auth.uid == '1p3BERkocYa6oWHtxhSkPOBWk8e2' ||
+        (
+          request.auth.token.email_verified == true &&
+          request.auth.token.email in [
+            'carla.farina80@gmail.com',
+            'biondabruna@gmail.com'
+          ]
+        )
+      );
     }
     match /families/famiglia/lists/{listId} {
-      allow read, write: if member();
+      allow read, write: if autorizzato();
     }
     match /families/famiglia/tasks/{taskId} {
-      allow read, write: if member();
+      allow read, write: if autorizzato();
     }
     match /{document=**} {
       allow read, write: if false;
