@@ -4,7 +4,7 @@ service cloud.firestore {
     // UID Firebase autorizzati. Mai usare password/token nel repository.
     function member() {
       return request.auth != null && request.auth.uid in [
-        'SOSTITUISCI_CON_UID_PRIMO_FAMILIARE'
+        '1p3BERkocYa6oWHtxhSkPOBWk8e2'
       ];
     }
     match /families/famiglia/lists/{listId} {
